@@ -9,13 +9,11 @@
         console.log('statusChangeCallback');
         console.log(response);
         if (response.status === 'connected') {
-          testAPI();
+          fbSend();
         } else if (response.status === 'not_authorized') {
           document.getElementById('status').innerHTML = '登入您的FB，授權給我們的應用程式！';
-          $('.btn-vote').css('desplay', 'none');
         } else {
           document.getElementById('status').innerHTML = '您尚未登入FB';
-          $('.btn-vote').css('desplay', 'none');
         }
     }
     
@@ -56,7 +54,7 @@
          console.log('Welcome!  Fetching your information.... ');
          FB.api('/me', function(response) {
            console.log('Successful login for: ' + response.name);
-           document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
+           document.getElementById('status').innerHTML =  response.name + '您已經登入了! 按下面按鈕投下神聖的一票吧！';
          });
     }
     
@@ -182,13 +180,13 @@
                 <3 </p>
                 <!-- FB login started-->
                 
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" auto_logout_link="true"></fb:login-button>
 
                 <div id="status">
                 </div>
     
             <!-- FB login ended -->        
-            <a href="javascript:fbSend()" class="btn-vote">Send vote to messengers.</a>
+            <!-- <a href="javascript:fbSend()" class="btn-vote">Send vote to messengers.</a> -->
         </h3>
         <section class="vote">
             <a href="http://hearsilent.tech/game1123/?vote=1" class="btn-vote">吃飯 && !微醺</a>
