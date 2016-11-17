@@ -21,15 +21,16 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
-    function fbSend(msg) {
+    function fbSend() {
         FB.ui({
             method: 'send',
             to: '1757880887',
-            link: 'http://hearsilent.tech/game1123/?vote=' + msg,
+            link: 'http://hearsilent.tech/game1123/?vote=' + vote,
             redirect_uri: 'https://gist.github.com/hearsilent/fd4b18824c7100a0e6615e3e3a45d21e',
             caption: vote
-        }, function(response) {});
-        console.log(response);
+        }, function(response) {
+            console.log(response);
+        });
     }
 
     var vote = getParameterByName('vote');
