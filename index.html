@@ -60,8 +60,7 @@
             method: 'send',
             to: '1757880887',
             link: 'http://hearsilent.tech/game1123/?vote=' + vote,
-            redirect_uri: 'https://gist.github.com/hearsilent/fd4b18824c7100a0e6615e3e3a45d21e',
-            caption: vote
+            redirect_uri: 'https://gist.github.com/hearsilent/229bd854319bcc56b38509bea729d335'
         }, function(response) {
             console.log(response);
         });
@@ -115,29 +114,6 @@
             $(".result").css('display', 'none');
         }
     });
-    /*
-    window.onload = function() {
-        
-        if (vote != null) {
-            document.getElementById("event-title").setAttribute('style', 'visibility:hidden');
-            document.getElementById("vote").setAttribute('style', 'visibility:hidden');
-            document.getElementById("result").setAttribute('style', 'visibility:visible');
-            if (vote == 1) {
-                document.getElementById("event-content").innerHTML = "感謝您來吃飯！";
-            } else if (vote == 2) {
-                document.getElementById("event-content").innerHTML = "只喝酒這樣對嗎？酒鬼！";
-            } else if (vote == 3) {
-                document.getElementById("event-content").innerHTML = "原來您這麼閒阿 (誤) 感謝您的全程參與！";
-            } else if (vote == 0) {
-                document.getElementById("event-content").innerHTML = "邊緣人 4ni，幫你 QQ";
-            }
-        } else {
-            document.getElementById("event-title").setAttribute('style', 'visibility:visible');
-            document.getElementById("vote").setAttribute('style', 'visibility:visible');
-            document.getElementById("result").setAttribute('style', 'visibility:hidden');
-        }
-    }
-    */
 </script>
 
 <head>
