@@ -66,7 +66,7 @@
         if(vote != null){
             $(".event-content").css('display', 'none');
             $(".vote").css('display', 'none');
-            $(".result").css('visibility', 'visible');
+            $(".result").css('display', 'inline');
         }
         if (vote == 1) {
                 document.getElementById("event-content").innerHTML = "感謝您來吃飯！";
@@ -77,9 +77,9 @@
             } else if (vote == 0) {
                 document.getElementById("event-content").innerHTML = "邊緣人 4ni，幫你 QQ";
             }else{
-                $(".event-content").css('visibility', 'visible');
-                $(".vote").css('visibility', 'visible');
-                $(".result").css('visibility', 'hidden');
+                $(".event-content").css('display', 'inline');
+                $(".vote").css('display', 'inline');
+                $(".result").css('display', 'none');
             }
     });
     /*
