@@ -66,19 +66,19 @@
         if(vote != null){
             $(".event-content").css('display', 'none');
             $(".vote").css('display', 'none');
-            $(".result").css('display', 'inline');
+            $(".result").css('display', 'block');
         }
         if (vote == 1) {
-                document.getElementById("event-content").innerHTML = "感謝您來吃飯！";
+                $(".event-content").HTML("感謝您來吃飯！");
             } else if (vote == 2) {
-                document.getElementById("event-content").innerHTML = "只喝酒這樣對嗎？酒鬼！";
+                 $(".event-content").HTML("只喝酒這樣對嗎？酒鬼！");
             } else if (vote == 3) {
-                document.getElementById("event-content").innerHTML = "原來您這麼閒阿 (誤) 感謝您的全程參與！";
+                 $(".event-content").HTML("原來您這麼閒阿 (誤) 感謝您的全程參與！");
             } else if (vote == 0) {
-                document.getElementById("event-content").innerHTML = "邊緣人 4ni，幫你 QQ";
+                 $(".event-content").HTML("邊緣人 4ni，幫你 QQ");
             }else{
-                $(".event-content").css('display', 'inline');
-                $(".vote").css('display', 'inline');
+                $(".event-content").css('display', 'block');
+                $(".vote").css('display', 'block');
                 $(".result").css('display', 'none');
             }
     });
@@ -126,7 +126,7 @@
         <a href="https://github.com/hearsilent/game1123/tarball/master" class="btn">Download .tar.gz</a>
     </section>
     <section class="main-content">
-        <h3 class="event-title" style="visibility:visible">11/23 吃飯 && 微醺團之與聽風有約－Bonus 小遊戲</h3>
+        <h3 class="event-title">11/23 吃飯 && 微醺團之與聽風有約－Bonus 小遊戲</h3>
         <h4 class="event-content">
             <p>安安，各位親朋好友兄弟姊妹，打給安安打給賀。</p>
            
@@ -147,13 +147,13 @@
              低消<strong>300</strong>元整<br/>
              酒吧：’etage 15 Lounge bar (<a href="http://www.kh.inmap.tw/archives/9915">http://www.kh.inmap.tw/archives/9915</a>)</p>
         </h4>
-        <h3 class="result" style="visibility:hidden">
+        <h3 class="result">
             <p>按下按鈕後會寄送投票結果給我跟子竣的 Facebook Messenger，若還沒加好友的可以趁這個時候加 (？)，也可以在訊息留下你想讓我們知道的悄悄話
                 <3 </p>
                 
                     <a href="javascript:fbSend('+1')" class="btn-vote">Send vote to messengers.</a>
         </h3>
-        <section class="vote" style="visibility: visible">
+        <section class="vote">
             <a href="http://hearsilent.tech/game1123/?vote=1" class="btn-vote">吃飯 && !微醺</a>
             <a href="http://hearsilent.tech/game1123/?vote=2" class="btn-vote">!吃飯 && 微醺</a>
             <a href="http://hearsilent.tech/game1123/?vote=3" class="btn-vote">吃飯 && 微醺</a>
