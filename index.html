@@ -2,42 +2,39 @@
 <html lang="zh-tw">
 <script src='//code.jquery.com/jquery-2.1.4.min.js'></script>
 <script>
-     /* 
-        Facebook Login
-    */
+    /* 
+            Facebook Login
+        */
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
         console.log(response);
         if (response.status === 'connected') {
-          fbSend();
+            fbSend();
         } else if (response.status === 'not_authorized') {
-          document.getElementById('status').innerHTML = '登入您的FB，授權給我們的應用程式！';
+            document.getElementById('status').innerHTML = '登入您的FB，授權給我們的應用程式！';
         } else {
-          document.getElementById('status').innerHTML = '您尚未登入FB';
+            document.getElementById('status').innerHTML = '您尚未登入FB';
         }
     }
-    
+
     function checkLoginState() {
         FB.getLoginStatus(function(response) {
-          statusChangeCallback(response);
+            statusChangeCallback(response);
         });
     }
-    
+
     window.fbAsyncInit = function() {
         FB.init({
             appId: '1119662058149706',
             xfbml: true,
             version: 'v2.8'
         });
-        
+
         FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
-         });
+        });
 
     };
-   
-    
-    
 
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -51,13 +48,13 @@
     }(document, 'script', 'facebook-jssdk'));
 
     function testAPI() {
-         console.log('Welcome!  Fetching your information.... ');
-         FB.api('/me', function(response) {
-           console.log('Successful login for: ' + response.name);
-           document.getElementById('status').innerHTML =  response.name + '您已經登入了! 按下面按鈕投下神聖的一票吧！';
-         });
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+            document.getElementById('status').innerHTML = response.name + '您已經登入了! 按下面按鈕投下神聖的一票吧！';
+        });
     }
-    
+
     function fbSend() {
         FB.ui({
             method: 'send',
@@ -102,7 +99,7 @@
             $(".event-title").css('display', 'none');
             $(".vote").css('display', 'none');
             $(".result").css('display', 'block');
-            $(".event-content").css('font-size','20px');
+            $(".event-content").css('font-size', '20px');
             if (vote == 1) {
                 $(".event-content").html("感謝您來吃飯！");
             } else if (vote == 2) {
@@ -176,17 +173,17 @@
                 <strong>300</strong>元整<br/> 酒吧：’etage 15 Lounge bar (<a href="http://www.kh.inmap.tw/archives/9915">http://www.kh.inmap.tw/archives/9915</a>)</p>
         </h4>
         <h3 class="result">
-            <p>按下按鈕後會寄送投票結果給我跟子竣的 Facebook Messenger，若還沒加好友的可以趁這個時候加 (？)，也可以在訊息留下你想讓我們知道的悄悄話
+            <p>按下按鈕後會寄送投票結果給我 (HearSilent) 的 Facebook Messenger，若還沒加好友的可以趁這個時候加 (？)，也可以在訊息留下你想讓我們知道的悄悄話
                 <3 </p>
-                <!-- FB login started-->
-                
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" auto_logout_link="true"></fb:login-button>
+                    <!-- FB login started-->
 
-                <div id="status">
-                </div>
-    
-            <!-- FB login ended -->        
-            <!-- <a href="javascript:fbSend()" class="btn-vote">Send vote to messengers.</a> -->
+                    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" auto_logout_link="true"></fb:login-button>
+
+                    <div id="status">
+                    </div>
+
+                    <!-- FB login ended -->
+                    <!-- <a href="javascript:fbSend()" class="btn-vote">Send vote to messengers.</a> -->
         </h3>
         <section class="vote">
             <a href="http://hearsilent.tech/game1123/?vote=1" class="btn-vote">吃飯 && !微醺</a>
