@@ -9,6 +9,32 @@
             version: 'v2.8'
         });
     };
+    
+    /* 
+        Facebook Login
+    */
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        if (response.status === 'connected') {
+          testAPI();
+        } else if (response.status === 'not_authorized') {
+          document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+        } else {
+          document.getElementById('status').innerHTML = 'Please log ' +'into Facebook.';
+        }
+    }
+    
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+        });
+    }
+    
+    FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+     });
+
 
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -21,6 +47,14 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
+    function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
+    });
+    }
+    
     function fbSend() {
         FB.ui({
             method: 'send',
@@ -141,8 +175,16 @@
         <h3 class="result">
             <p>按下按鈕後會寄送投票結果給我跟子竣的 Facebook Messenger，若還沒加好友的可以趁這個時候加 (？)，也可以在訊息留下你想讓我們知道的悄悄話
                 <3 </p>
+                <!-- FB login started-->
+                <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
+                
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 
-                    <a href="javascript:fbSend()" class="btn-vote">Send vote to messengers.</a>
+                <div id="status">
+                </div>
+    
+            <!-- FB login ended -->        
+            <a href="javascript:fbSend()" class="btn-vote">Send vote to messengers.</a>
         </h3>
         <section class="vote">
             <a href="http://hearsilent.tech/game1123/?vote=1" class="btn-vote">吃飯 && !微醺</a>
