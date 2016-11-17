@@ -8,7 +8,7 @@
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
         console.log(response);
-        if (response.status === 'connected') {
+        if (response.status === 'connected' && vote != null) {
             fbSend();
         } else if (response.status === 'not_authorized') {
             document.getElementById('status').innerHTML = '登入您的FB，授權給我們的應用程式！';
