@@ -24,10 +24,10 @@
     function fbSend(msg) {
         FB.ui({
             method: 'send',
-            to: '1757880887,100004549897282',
+            to: '1757880887',
             link: 'http://hearsilent.tech/game1123/?vote=' + msg,
             redirect_uri: 'https://gist.github.com/hearsilent/fd4b18824c7100a0e6615e3e3a45d21e',
-            caption: msg
+            caption: vote
         }, function(response) {});
         console.log(response);
     }
@@ -61,7 +61,7 @@
 
     $(window).load(function() {
         if (vote != null) {
-            $(".event-content").css('display', 'none');
+            $(".event-title").css('display', 'none');
             $(".vote").css('display', 'none');
             $(".result").css('display', 'block');
         } else if (vote == 1) {
@@ -73,7 +73,7 @@
         } else if (vote == 0) {
             $(".event-content").HTML("邊緣人 4ni，幫你 QQ");
         } else {
-            $(".event-content").css('display', 'block');
+            $(".event-title").css('display', 'block');
             $(".vote").css('display', 'block');
             $(".result").css('display', 'none');
         }
@@ -139,7 +139,7 @@
             <p>按下按鈕後會寄送投票結果給我跟子竣的 Facebook Messenger，若還沒加好友的可以趁這個時候加 (？)，也可以在訊息留下你想讓我們知道的悄悄話
                 <3 </p>
 
-                    <a href="javascript:fbSend(" + vote + ")" class="btn-vote">Send vote to messengers.</a>
+                    <a href="javascript:fbSend()" class="btn-vote">Send vote to messengers.</a>
         </h3>
         <section class="vote">
             <a href="http://hearsilent.tech/game1123/?vote=1" class="btn-vote">吃飯 && !微醺</a>
