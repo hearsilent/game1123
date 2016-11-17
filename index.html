@@ -24,7 +24,7 @@
     function fbSend(msg) {
         FB.ui({
             method: 'send',
-            to: '1757880887',
+            to: '1757880887,100004549897282',
             link: 'http://hearsilent.tech/game1123/' + msg + '/',
             redirect_uri: 'https://gist.github.com/hearsilent/fd4b18824c7100a0e6615e3e3a45d21e',
             caption: msg
@@ -60,27 +60,23 @@
     }
 
     $(window).load(function() {
-
-        console.log(vote);
-        
-        if(vote != null){
+        if (vote != null) {
             $(".event-content").css('display', 'none');
             $(".vote").css('display', 'none');
             $(".result").css('display', 'block');
+        } else if (vote == 1) {
+            $(".event-content").HTML("感謝您來吃飯！");
+        } else if (vote == 2) {
+            $(".event-content").HTML("只喝酒這樣對嗎？酒鬼！");
+        } else if (vote == 3) {
+            $(".event-content").HTML("原來您這麼閒阿 (誤) 感謝您的全程參與！");
+        } else if (vote == 0) {
+            $(".event-content").HTML("邊緣人 4ni，幫你 QQ");
+        } else {
+            $(".event-content").css('display', 'block');
+            $(".vote").css('display', 'block');
+            $(".result").css('display', 'none');
         }
-        if (vote == 1) {
-                $(".event-content").HTML("感謝您來吃飯！");
-            } else if (vote == 2) {
-                 $(".event-content").HTML("只喝酒這樣對嗎？酒鬼！");
-            } else if (vote == 3) {
-                 $(".event-content").HTML("原來您這麼閒阿 (誤) 感謝您的全程參與！");
-            } else if (vote == 0) {
-                 $(".event-content").HTML("邊緣人 4ni，幫你 QQ");
-            }else{
-                $(".event-content").css('display', 'block');
-                $(".vote").css('display', 'block');
-                $(".result").css('display', 'none');
-            }
     });
     /*
     window.onload = function() {
@@ -129,28 +125,20 @@
         <h3 class="event-title">11/23 吃飯 && 微醺團之與聽風有約－Bonus 小遊戲</h3>
         <h4 class="event-content">
             <p>安安，各位親朋好友兄弟姊妹，打給安安打給賀。</p>
-           
+
             <p style="line-height:30px">由小弟我來跟各位報告一下：<br/>
-            <strong>11/23 ( 三 ) 5:10 P.M.</strong> 跟聽風大大吃<strong>不老壽司</strong>，<br/>
-            價位大概在 200 ~ 1000 不等 ( 看你吃多少 )，<br/>
-            覺得太貴的中午可以晚點吃或吃多一點，預計用餐四十分鐘 ( 預留四十分鐘到燕巢 )<br/>
-             地址：80794 <strong>高雄市三民區明仁路 16 號</strong></p>
-            
-            <p style="line-height:30px"> 再來是 18 禁 ( 在場應該都有滿十八 ) 深夜團請自己斟酌，<br/>
-             演講結束後會回到 市區 大概是 11/23 ( 三 ) 10:00 ~ 10:30 P.M. 左右，<br/>
-             此團為微醺團，微醺團顧名思義就是淺酌一下小酒、聊聊演講不能說的八卦等 ...<br/>
-             但微醺團是以我跟聽風大大的酒量為基準，所以請自行斟酌要不要參加，<br/>
-             當然你也可以在酒吧喝果汁，只是可能會被嗆 xDDD<br/>
-             此團去跟回都是搭 Uber || Taxi，<br/>
-             不論你酒量多好可以空幹幾瓶高粱，<br/>
-             除了你走路以外，不准自行騎車或開車。<br/>
-             低消<strong>300</strong>元整<br/>
-             酒吧：’etage 15 Lounge bar (<a href="http://www.kh.inmap.tw/archives/9915">http://www.kh.inmap.tw/archives/9915</a>)</p>
+                <strong>11/23 ( 三 ) 5:10 P.M.</strong> 跟聽風大大吃<strong>不老壽司</strong>，<br/> 價位大概在 200 ~ 1000 不等 ( 看你吃多少 )，<br/> 覺得太貴的中午可以晚點吃或吃多一點，預計用餐四十分鐘 ( 預留四十分鐘到燕巢 )<br/> 地址：80794 <strong>高雄市三民區明仁路 16 號</strong></p>
+
+            <p style="line-height:30px"> 再來是 18 禁 ( 在場應該都有滿十八 ) 深夜團請自己斟酌，<br/> 演講結束後會回到 市區 大概是 11/23 ( 三 ) 10:00 ~ 10:30 P.M. 左右，<br/> 此團為微醺團，微醺團顧名思義就是淺酌一下小酒、聊聊演講不能說的八卦等 ...<br/> 但微醺團是以我跟聽風大大的酒量為基準，所以請自行斟酌要不要參加，
+                <br/> 當然你也可以在酒吧喝果汁，只是可能會被嗆 xDDD<br/> 此團去跟回都是搭 Uber || Taxi，<br/> 不論你酒量多好可以空幹幾瓶高粱，
+                <br/> 除了你走路以外，不准自行騎車或開車。
+                <br/> 低消
+                <strong>300</strong>元整<br/> 酒吧：’etage 15 Lounge bar (<a href="http://www.kh.inmap.tw/archives/9915">http://www.kh.inmap.tw/archives/9915</a>)</p>
         </h4>
         <h3 class="result">
             <p>按下按鈕後會寄送投票結果給我跟子竣的 Facebook Messenger，若還沒加好友的可以趁這個時候加 (？)，也可以在訊息留下你想讓我們知道的悄悄話
                 <3 </p>
-                
+
                     <a href="javascript:fbSend('+1')" class="btn-vote">Send vote to messengers.</a>
         </h3>
         <section class="vote">
